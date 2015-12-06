@@ -24,13 +24,13 @@ function parseEvent($) {
   var e = {};
   e.title = $('a').text();
   e.href = "https://www.odu.edu" + $('a').attr('href');
-  getHTML(e.href).then(function(html) {
-    var $ = new cheerio.load(html);
-    var text = $('article').text().replace(/\s+/g,' ').trim();
-    e.text = text;
-    // console.log($('article').text());
-  });
-  console.log("damn");
+  // getHTML(e.href).then(function(html) {
+  //   var $ = new cheerio.load(html);
+  //   var text = $('article').text().replace(/\s+/g,' ').trim();
+  //   e.text = text;
+  //   return e;
+  //   // console.log($('article').text());
+  // });
   return e;
 }
 
@@ -75,7 +75,7 @@ function parseAnnouncements($) {
 var Scraper = function(config) {
   return {
     getAnnouncementsJSON: function() {
-      return new Promise(function (fulfill, reject){
+      return new Promise(function (fulfill, reject) {
         getHTML(config.announcementUrl).then(function(html) {
           var announcements = {};
           if(html !== '') {
