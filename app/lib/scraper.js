@@ -20,12 +20,27 @@ function getHTML(url) {
   });
 }
 
+function parseEvent($) {
+  var e = {};
+  e.title = $('a').text();
+  e.href = "https://www.odu.edu" + $('a').attr('href');
+  getHTML(e.href).then(function(html) {
+    var $ = new cheerio.load(html);
+    var text = $('article').text().replace(/\s+/g,' ').trim();
+    e.text = text;
+    // console.log($('article').text());
+  });
+  console.log("damn");
+  return e;
+}
+
 function parseCategory($) {
   var events = [];
-  $('div.ann-academic').each(function(i, element) {
+  $('div').each(function(i, element) {
     $(this).children('p').each(function(i, element) {
       console.log($(this).text());
-      events.push($(this).text());
+      var e = parseEvent( new cheerio.load( $(this).html() ) );
+      events.push(e);
     });
   });
   return events;
