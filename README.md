@@ -1,4 +1,6 @@
 # University Announcement API
+![Heroku](http://heroku-badge.herokuapp.com/?app=university-announcements-api&root=/scraper)
+![David](https://david-dm.org/joshuajharris/university-announcements-api.svg)  
 ODU's Announcements, seen [here](https://www.odu.edu/announcements) and in the emails, in api form.
 
 ## Setup
