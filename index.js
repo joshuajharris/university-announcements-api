@@ -1,6 +1,6 @@
 var port = process.env.PORT || 8080;
 
-var Bootstrap = require('./app/Bootstrap');
+var Bootstrap = require('./app/bootstrap');
 var app = new Bootstrap();
 
 var server = app.init();
