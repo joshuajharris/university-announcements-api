@@ -2,8 +2,13 @@ var request = require('request');
 var cheerio = require('cheerio');
 var Promise = require('promise');
 var async = require('async');
+var moment = require('moment');
 
 var Scraper = function(config) {
+
+  function getDate() {
+    return moment().format('YYYY-MM-DD');
+  }
 
   function getHTML(url) {
     return new Promise(function(resolve, reject) {
@@ -69,6 +74,7 @@ var Scraper = function(config) {
       ],
       function(err, res){
         json.announcements = res;
+        json.date = getDate();
         resolve(json);
       });
     });
