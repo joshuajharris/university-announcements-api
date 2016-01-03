@@ -8,7 +8,7 @@ var ArchiveCron = function(config) {
   var url = '';
 
   function getDate() {
-    return moment().format('YYYY-MM-DD');
+    return moment().tz('America/New_York').format('YYYY-MM-DD');
   }
 
   function init() {
@@ -87,6 +87,7 @@ var ArchiveCron = function(config) {
   this.setup = function() {
     init();
 
+    // if after dyno wakes it has missed the cron job time
     hasBeenDone(function(isDone) {
       if(!isDone) {
         console.log('has not been done');

@@ -7,7 +7,7 @@ var moment = require('moment');
 var Scraper = function(config) {
 
   function getDate() {
-    return moment().format('YYYY-MM-DD');
+    return moment().tz('America/New_York').format('YYYY-MM-DD');
   }
 
   function getHTML(url) {

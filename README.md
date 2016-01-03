@@ -18,6 +18,13 @@ cd university-announcements-api
 
 ## How to Run
 1. In a terminal, in the project directory run `node index.js`
+2. Set environment variables.
+```bash
+export MONGOLAB_URI=enter_your_uri_here # defaults to mongodb://localhost:27017
+export HOST=enter_app_host # defaults to http://localhost
+```
+
+If running local mongo instance make a collection called "announcements".
 
 ## Endpoints
 ---
