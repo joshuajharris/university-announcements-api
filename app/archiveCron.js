@@ -2,7 +2,7 @@ var request = require('request');
 var CronJob = require('cron').CronJob;
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
-var moment = require('moment');
+var moment = require('moment-timezone');
 
 var ArchiveCron = function(config) {
   var url = '';

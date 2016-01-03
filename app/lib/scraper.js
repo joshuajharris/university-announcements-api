@@ -2,7 +2,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var Promise = require('promise');
 var async = require('async');
-var moment = require('moment');
+var moment = require('moment-timezone');
 
 var Scraper = function(config) {
 
